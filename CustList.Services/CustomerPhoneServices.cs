@@ -74,13 +74,13 @@ namespace CustList.Services
 
         public async Task<Response<bool>> Remove(CustomerPhone entity)
         {
-            var res = await _CustomerPhoneRepo.Remove(entity);
+            var res = !await _CustomerPhoneRepo.Remove(entity);
             return Factory.GetResponse<Response<bool>, bool>(res);
         }
 
         public async Task<Response<bool>> Remove<TId>(TId id)
         {
-            var res = await _CustomerPhoneRepo.Remove(id);
+            var res = !await _CustomerPhoneRepo.Remove(id);
             return Factory.GetResponse<Response<bool>, bool>(res);
         }
 

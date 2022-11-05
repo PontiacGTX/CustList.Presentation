@@ -24,7 +24,7 @@ namespace WebApplication4.Controllers
         public async Task<IActionResult> Index()
         {
 
-            return View(await _customerServices.GetAll());
+            return View((await _customerServices.GetAll()).Data);
         }
 
         public IActionResult Privacy()

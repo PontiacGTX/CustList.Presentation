@@ -13,9 +13,17 @@ namespace CustList.Entities.Entities
     {
         [Key]
         public int cId { get; set; }
+        [MaxLength(30)]
+        [Required]
         public string Name1 { get; set; }
+        [MaxLength(30)]
+        [Required]
         public string Name2 { get; set; }
+        [MaxLength(30)]
+        [Required]
         public string LastName1 { get; set; }
+        [MaxLength(30)]
+        [Required]
         public string LastName2 { get; set; }
         public IList<CustomerPhone> CustomerPhones { get; set; }
 
