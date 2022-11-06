@@ -69,8 +69,8 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Add Phone</h4>
+                <button type="button" class="close" onclick="clearpModal()" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Phone list</h4>
             </div>
             <input id="hidId" type="hidden" />
             <div class="modal-body">
@@ -217,7 +217,7 @@
             $.ajax({
                 type: 'Delete',
                 url: uri,
-                //contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
+                
                 data: placeHolder,
                 success: function (result) {
 

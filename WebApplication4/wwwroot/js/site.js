@@ -74,7 +74,7 @@ function ShowPhoneList(id) {
         url: uri,
         //contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
         success: function (result) {
-            $('#pModal').modal('toggle')
+            
             var list = $('<ul/>').appendTo('#phoneContainer');
             result.data.forEach(element =>
 
@@ -84,15 +84,17 @@ function ShowPhoneList(id) {
             //    // New <li> elements are created here and added to the <ul> element.
             //    list.append('<li>something</li>');
             //}
-            alert("Test Crud Desarrollado por https://github.com/PontiacGTX")
+            $('#pModal').modal('toggle')
+            
         
         },
         error: function () {
             console.log('Failed ');
         }
+        
     })
 
-   
+    
     
 }
 
