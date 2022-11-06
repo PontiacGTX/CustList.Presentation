@@ -7,7 +7,7 @@
 <h1>Index</h1>
 <link href="~/lib/datatables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 <p>
-    <a asp-action="Create">Create New</a>
+    
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="registerCust">
     Create Customer
     </button>
@@ -97,7 +97,7 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" onclick="closeElement('myModal')">&times;</button>
           <h4 class="modal-title">Add Phone</h4>
         </div>
             <input id="hidId" type="hidden" />
@@ -108,8 +108,8 @@
                 <input id="inputPhone" type="tel" placeholder="Phone number" />
         </div>
         <div class="modal-footer">
-                
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                <button type="button" class="btn btn-secondary close" data-dismiss="modal" onclick="closeElement('myModal')"  >Close</button>
             <button type="button" class="btn btn-primary" id="savePhone">Save</button>
                 
         </div>
@@ -125,7 +125,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">new customer</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" onclick="closeElement('exampleModalCenter')" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -159,8 +159,8 @@
                
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="addCustBtn">Add Customer</button>
+                <button type="button" class="btn btn-secondary close" onclick="closeElement('exampleModalCenter')"  data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary close" id="addCustBtn">Add Customer</button>
             </div>
         </div>
     </div>
@@ -201,7 +201,7 @@
                     { "data": "lastName2", "name": "lastName2", "autoWidth": true },
                     {
 
-                        "render": function (data, type, row, meta) { return "<a href='#' class='btn btn-danger' onclick=DeleteCustomer('" + row.cId + "'); >" + "  Delete</a>" + `<a class='btn btn-primary'  onclick=AddPhoneNumbers('${row.cId}');>AddPhone</a>` + `<a class='btn btn-success' href='/Producto/Edit/${row.cId}'>Edit</a>` + `<a class='btn btn-success' onclick=ShowPhoneList('${row.cId}') >Phone List</a>`; },
+                        "render": function (data, type, row, meta) { return "<a href='#' class='btn btn-danger' onclick=DeleteCustomer('" + row.cId + "'); >" + "  Delete</a>" + `<a class='btn btn-primary'  onclick=AddPhoneNumbers('${row.cId}');>AddPhone</a>` + `<a class='btn btn-success'   href='/' disabled>Edit</a>` + `<a class='btn btn-success' onclick=ShowPhoneList('${row.cId}') >Phone List</a>`; },
                         
                     },
                 ]

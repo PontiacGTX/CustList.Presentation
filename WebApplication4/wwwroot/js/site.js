@@ -7,6 +7,11 @@
 
 })
 
+function closeElement(e) {
+    console.log(e)
+    $(`#${e}`).modal('toggle')
+}
+
 $('#savePhone').on('click', () => {
 
     let n = $('#inputPhone').val();
@@ -125,6 +130,12 @@ function DeleteCustomer(id) {
 
   
 }
+
+$('editBtn').on('click', (e) => {
+    e.preventDefault();
+    return false;
+
+})
 
 $('#addCustBtn').on('click', () => {
     
